@@ -43,7 +43,7 @@ export class HaromszogKerSzamolComponent {
     const b = parseFloat(this.b.toString());
     const c = parseFloat(this.c.toString());
 
-    if(this.osszegPozitiv(a, b, c)) {
+    if (this.osszegPozitiv(a, b, c) ) {
       this.eredmeny = a + b + c;
     } else {
       this.eredmeny = null;
@@ -52,7 +52,13 @@ export class HaromszogKerSzamolComponent {
   }
 
   private osszegPozitiv(a: number, b: number, c: number): boolean {
-    return a > 0 && b > 0 && c > 0;
+    return a >= 0 && b >= 0 && c >= 0;
   }
 
+  public reset() {
+    this.A = 0;
+    this.B = 0;
+    this.C = 0;
+    this.eredmeny = 0;
+  }
 }
